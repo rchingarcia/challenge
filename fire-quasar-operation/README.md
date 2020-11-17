@@ -9,6 +9,8 @@ _Esta api utiliza la ubicación de tres satélites (coordenadas x,y) que te perm
 
 _Necesitas tener instalado maven y la jdk8_
 
+* Instalar [maven y jdk8](https://dev.to/vanessa_corredor/instalar-manualmente-maven-en-windows-10-50pb)
+
 ## Despliegue 📦
 
 _Ejecutar el siguiente comando desde la raíz del proyecto_
