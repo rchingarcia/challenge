@@ -28,8 +28,6 @@ public class TopSecretController {
 
 	@PostMapping("/topsecret")
 	public ResponseEntity<ResponseDto> getTopSecretLocation(@RequestBody TopSecretDto topSecretDto) {
-		// topSecretService.calculateThreeCircleIntersection(-500, -200, 300.0, 100,
-		// -100, 310.0, 500, 100, 744.55378218);
 		return topSecretService.getTopSecretLocation(topSecretDto.getSatelites());
 	}
 
@@ -41,7 +39,7 @@ public class TopSecretController {
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 
-	@GetMapping("/topsecret_split/{satelliteName}")
+	@GetMapping("/topsecret_split")
 	public ResponseEntity<ResponseDto> getTopSecretSplitLocation() {
 		return topSecretSplitService.getTopSecretSplitLocation();
 	}
