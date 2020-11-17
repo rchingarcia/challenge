@@ -1,4 +1,7 @@
 # Operación Fuego de Quasar
+
+_Esta api utiliza la ubicación de tres satélites (coordenadas x,y) que te permitirán triangular la posición de la fuente del mensaje, e intentar decifrar el mensaje recibido, en caso contrario obtendra un código 404 de que no se pudo calcular la ubicación del emisor ni el mensaje_.
+
 ## Comenzando 🚀
 
 
@@ -33,35 +36,17 @@ _Ejecutar una peticion POST => /topsecret conn el siguiente body_
     {
       "name": "Kenobi",
       "distance": 300.0,
-      "message": [
-        "este",
-        "",
-        "",
-        "mensaje",
-        ""
-      ]
+      "message": [ "este", "", "", "mensaje", "" ]
     },
     {
       "name": "skywalker",
       "distance": 310.00003177,
-      "message": [
-        "",
-        "es",
-        "",
-        "",
-        "secreto"
-      ]
+      "message": [ "", "es", "", "", "secreto" ]
     },
     {
       "name": "sato",
       "distance": 744.55378218,
-      "message": [
-        "este",
-        "",
-        "un",
-        "",
-        ""
-      ]
+      "message": [ "este", "", "un", "", "" ]
     }
   ]
 }
@@ -79,4 +64,44 @@ _Obtendras como respuesta_
 }
 ```
 
+_Ejecutar una peticion POST => /topsecret_split/kenobi con el siguiente body_
+
+```
+{
+    "distance": 300.0,
+     "message": [ "este", "", "", "mensaje", "" ]
+}
+```
+
+_Ejecutar una peticion POST => /topsecret_split/skywaler con el siguiente body_
+
+```
+{
+     "distance": 310.00003177,
+     "message": [ "", "es", "", "", "secreto" ]
+     
+}
+```
+
+_Ejecutar una peticion POST => /topsecret_split/sato con el siguiente body_
+
+```
+{
+     "distance": 744.55378218,
+     "message": [ "", "es", "", "", "secreto" ]
+     
+}
+```
+
+_Por último ejecutar una peticion GET => /topsecret_split y obtendrá la respuesta_
+
+```
+{
+    "position": {
+        "x": -208.71236,
+        "y": -128.22597
+    },
+    "message": "este es un mensaje secreto "
+}
+```
 
