@@ -1,6 +1,6 @@
 # Operación Fuego de Quasar
 
-_Esta api utiliza la ubicación de tres satélites (coordenadas x,y) que te permitirán triangular la posición de la fuente del mensaje, e intentar decifrar el mensaje recibido, en caso contrario obtendra un código 404 de que no se pudo calcular la ubicación del emisor ni el mensaje_.
+_Esta api utiliza la ubicación de tres satélites (coordenadas x,y) que te permitirán triangular la posición de la fuente del mensaje (se reciben las distancias del emisor), e intentar decifrar el mensaje recibido, en caso contrario obtendra un código 404 de que no se pudo calcular la ubicación del emisor ni el mensaje_.
 
 ## Comenzando 🚀
 
@@ -30,7 +30,7 @@ java -jar fire-quasar-operation-0.0.1-SNAPSHOT.jar
 ```
 ## Ejecutando las pruebas ⚙️
 
-_Ejecutar una peticion POST => /topsecret conn el siguiente body_
+_Ejecutar una peticion POST => /topsecret con el siguiente body_
 
 ```
 {
